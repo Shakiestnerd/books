@@ -1,0 +1,55 @@
+//Without any jQuery plugins you can float a  html element on your we page.
+//Here we are taking example of a div element.
+//You can place that div anywhere according to your requirements.
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
+    <script language="javascript">
+
+            $(document).ready(function(){
+ 
+         //on window scroll fire it will call a function.
+
+                $(window).scroll(function () {
+ 
+         //after window scroll fire it will add define pixel added to that element.
+
+                    set = $(document).scrollTop()+"px";
+ 
+        //this is the jQuery animate function to fixed the div position after scrolling.
+
+                    $('#floatDiv').animate({top:set},{duration:200,queue:false});
+
+                });
+
+            });
+
+         </script>
+
+    <style type="text/css">
+
+    body .divMain{
+        height:6000px !important;
+        background-color:yellow;
+        overflow:auto;
+    }
+   .divMain #floatDiv {
+        position:absolute;
+        left:50%;
+        margin-top:200px;
+        margin-left:-200px;
+        width:200px;
+        height:200px;
+        background-color: red;
+    }
+            
+    </style>
+</head>
+<body>
+    <div class="divMain">
+        <div id="floatDiv">
+        	Hello World!
+        </div>
+    </div>
+</body>
+</html>
